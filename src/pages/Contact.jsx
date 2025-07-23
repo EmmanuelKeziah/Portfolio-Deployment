@@ -1,0 +1,105 @@
+import React, { useState } from "react";
+
+const Contact = () => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    setError("");
+    setSuccess("");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!form.name || !form.email || !form.message) {
+      setError("Please fill in all fields.");
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(form.email)) {
+      setError("Enter a valid email address.");
+      return;
+    }
+
+    setSuccess("Message sent successfully!");
+    setForm({ name: "", email: "", message: "" });
+  };
+
+  return (
+    <section
+      id="contact"
+      className="min-h-screen py-20 px-5 md:px-20 bg-[#0f172a] text-[#f1f5f9]"
+    >
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-gray-100 text-center mb-10">
+          Contact Me
+        </h2>
+        <h3>Feel free to contact me</h3>
+
+        {error && (
+          <p className="mb-4 text-red-400 font-medium bg-red-950 p-2 rounded">
+            {error}
+          </p>
+        )}
+        {success && (
+          <p className="mb-4 text-green-400 font-medium bg-green-950 p-2 rounded">
+            {success}
+          </p>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-6 text-left">
+          <div>
+            <label htmlFor="name" className="block mb-2 text-[#f1f5f9]">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              className="w-full p-3 bg-[#1e293b] text-[#f1f5f9] border border-[#334155] rounded"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="block mb-2 text-[#f1f5f9]">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              className="w-full p-3 bg-[#1e293b] text-[#f1f5f9] border border-[#334155] rounded"
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="block mb-2 text-[#f1f5f9]">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              value={form.message}
+              onChange={handleChange}
+              className="w-full p-3 bg-[#1e293b] text-[#f1f5f9] border border-[#334155] rounded"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className=" bg-[#14b8a6] hover:bg-[#0d9488] text-[white] font-semibold py-3 px-6 rounded transition"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
