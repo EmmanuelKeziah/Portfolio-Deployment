@@ -6,8 +6,8 @@ const projects = [
     title: "Portfolio Website",
     description: "A personal portfolio website to showcase my work and skills.",
     tools: ["React", "Tailwind CSS", "JavaScript"],
-    github: "https://",
-    live: "https://",
+    github: "https://github.com/EmmanuelKeziah/Portfolio-Deployment",
+    live: "https://portfolio-deployment-virid.vercel.app/",
   },
   {
     id: 2,
@@ -16,6 +16,7 @@ const projects = [
     tools: ["React", "Tailwind CSS", "JavaScript"],
     github: "https://github.com/EmmanuelKeziah/SignUp-Form_REACTJS",
     live: "https://sign-up-form-reactjs-iota.vercel.app/",
+    loom: "https://www.loom.com/share/76bb6362f1e444a29e66406c747a7ead?sid=e91132e1-27bf-4538-ab66-385e68fe39e4",
   },
   {
     id: 3,
@@ -84,7 +85,7 @@ const Projects = () => {
               ))}
             </div>
 
-            <div className="flex justify-between  items-center text-sm font-medium max-w-[200px]">
+            <div className="flex justify-between  items-center text-sm font-medium max-w-[300px]">
               <a
                 href={project.github}
                 target="_blank"
@@ -101,6 +102,17 @@ const Projects = () => {
               >
                 Live Demo
               </a>
+
+              {project.loom && (
+                <a
+                  href={project.loom}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#14b8a6] text-white px-4 py-2 rounded-md hover:bg-[#0d9488] transition"
+                >
+                  Loom Video
+                </a>
+              )}
             </div>
           </div>
         ))}

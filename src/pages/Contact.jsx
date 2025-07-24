@@ -20,11 +20,11 @@ const Contact = () => {
     }
 
     if (!/\S+@\S+\.\S+/.test(form.email)) {
-      setError("Enter a valid email address.");
+      setError("All fields are required. Please check your input.");
       return;
     }
 
-    setSuccess("Message sent successfully!");
+    setSuccess("Thank you, your message has been sent successfully!");
     setForm({ name: "", email: "", message: "" });
   };
 
@@ -37,8 +37,11 @@ const Contact = () => {
         <h2 className="text-3xl font-bold text-gray-100 text-center mb-10">
           Contact Me
         </h2>
-        <h3>Feel free to contact me</h3>
-
+        <p className="text-gray-400 mb-8">
+          Got a question, feedback, or an opportunity to collaborate? I'd love
+          to hear from you. Fill out the form below and I'll get back to you
+          soon.
+        </p>
         {error && (
           <p className="mb-4 text-red-400 font-medium bg-red-950 p-2 rounded">
             {error}
@@ -50,7 +53,10 @@ const Contact = () => {
           </p>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6 text-left">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 border-2 border-gray-300  rounded-lg p-4 text-left"
+        >
           <div>
             <label htmlFor="name" className="block mb-2 text-[#f1f5f9]">
               Name
@@ -59,6 +65,7 @@ const Contact = () => {
               type="text"
               id="name"
               name="name"
+              placeholder="Enter your name"
               value={form.name}
               onChange={handleChange}
               className="w-full p-3 bg-[#1e293b] text-[#f1f5f9] border border-[#334155] rounded"
@@ -72,6 +79,7 @@ const Contact = () => {
               type="email"
               id="email"
               name="email"
+              placeholder="Enter your email"
               value={form.email}
               onChange={handleChange}
               className="w-full p-3 bg-[#1e293b] text-[#f1f5f9] border border-[#334155] rounded"
@@ -84,6 +92,7 @@ const Contact = () => {
             <textarea
               id="message"
               name="message"
+              placeholder="Type something..."
               rows="5"
               value={form.message}
               onChange={handleChange}

@@ -14,9 +14,10 @@ const Home = () => {
             Hi, I'm Keziah Emmanuel
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto md:mx-0">
-            I design and build seamless web experiences using React and Tailwind
-            CSS. From logic-driven interfaces to clean UI components, I turn
-            ideas into interactive solutions that work.
+            I am a full stack developer. I design and build seamless web
+            experiences using React and Tailwind CSS. From logic-driven
+            interfaces to clean UI components, I turn ideas into interactive
+            solutions that work.
           </p>
 
           <div className="flex justify-center md:justify-start gap-6">
@@ -36,6 +37,15 @@ const Home = () => {
             >
               <Button text="LinkedIn" />
             </a>
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" inline-block bg-[#14b8a6] text-white px-6 py-3 rounded-md hover:bg-[#0d9488] transition"
+            >
+              Download CV
+            </a>
           </div>
         </div>
 
@@ -43,7 +53,7 @@ const Home = () => {
           <img
             src={profile}
             alt="Keziah's Profile"
-            className=" md:w-40 md:h-40 border-2 border-gray-600 object-contain w-full h-full "
+            className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-cover rounded-lg border-2 border-gray-600 shadow-lg"
           />
         </div>
       </div>
