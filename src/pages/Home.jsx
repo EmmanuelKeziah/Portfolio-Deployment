@@ -14,7 +14,7 @@ const Home = () => {
             Hi, I'm Keziah Emmanuel
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto md:mx-0">
-            I am a full stack developer. I design and build seamless web
+            I am a frontend developer. I design and build seamless web
             experiences using React and Tailwind CSS. From logic-driven
             interfaces to clean UI components, I turn ideas into interactive
             solutions that work.
