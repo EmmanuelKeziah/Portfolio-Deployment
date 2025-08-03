@@ -17,7 +17,7 @@ It showcases a simple personal site with clean layout, basic routing, and respon
 This project was part of an assignment to practice real-world layout and component styling using what I’ve learned so far.  
 It is a **work in progress**, and I plan to:
 - Improve the design and spacing
-- Add form validation and interactivity
+- Add form validation and interactivity.
 - Explore animation and maybe integrate a backend
 
 ## Features
