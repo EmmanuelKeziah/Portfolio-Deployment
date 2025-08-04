@@ -1,6 +1,6 @@
 #  Keziah's Frontend Developer Portfolio
 
-This is a beginner-friendly **frontend portfolio project** built with **React** and **Tailwind CSS**.  
+This is a beginner-friendly **frontend portfolio project** built with **React** and **Tailwind CSS**. 
 It showcases a simple personal site with clean layout, basic routing, and responsive design.
 
 ## Live Demo
